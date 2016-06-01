@@ -5,19 +5,19 @@ The main difference is that in the original plugin it is possible to post an enc
 Our plugin assumes that the client code extracts the features from the image and uses ElasticSearch to index the features, but the binaries of the images are stored outside ElasticSearch.
 
 ## Installation
-This plugin is  compatible with ElasticSearch 2.1.1
-1. Package the source code into a jar archive.
+This plugin is  compatible with ElasticSearch 2.1.1 <br/>
+1. Package the source code into a zip archive. <br />
 ```
 mvn package
 ```
-This will create the jar file in target/releases folder.
-
-2. Install the plugin on your ElasticSearch server instance
+This will create the zip file in <b>target/releases</b> folder. <br/><br/>
+2. Install the plugin on your ElasticSearch server instance<br />
 ```
-sudo <ES_HOME>/bin/plugin install file://<PATH TO JAR ARCHIVE>
+sudo <ES_HOME>/bin/plugin install file://<PATH TO ZIP ARCHIVE>
 ```
+<br/>
+3. Restart ElasticSearch<br />
 
-3. Restart ElasticSearch
 
 ## Creating an image type
 After installing the plugin, you can create a type in an index that conatins the mapping for the "image" type.
