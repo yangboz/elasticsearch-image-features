@@ -5,7 +5,7 @@ The main difference is that in the original plugin it is possible to post an enc
 Our plugin assumes that the client code extracts the features from the image and uses ElasticSearch to index the features, but the binaries of the images are stored outside ElasticSearch.
 
 ## Installation
-This plugin is  compatible with ElasticSearch 2.1.1 <br/>
+This plugin is  compatible with ElasticSearch 2.1.1 <br/><br/>
 1. Package the source code into a zip archive. <br />
 ```
 mvn package
