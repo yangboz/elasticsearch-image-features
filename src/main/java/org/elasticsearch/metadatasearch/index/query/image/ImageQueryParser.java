@@ -16,7 +16,7 @@ import org.elasticsearch.index.query.QueryParsingException;
 import org.elasticsearch.metadatasearch.index.hashes.LSH;
 import org.elasticsearch.metadatasearch.index.mapper.image.FeatureEnum;
 import org.elasticsearch.metadatasearch.index.mapper.image.HashEnum;
-import org.elasticsearch.metadatasearch.index.mapper.image.ImageMapper;
+import org.elasticsearch.metadatasearch.index.mapper.image.ImageFeaturesMapper;
 import org.elasticsearch.metadatasearch.lire.feature.ImageLireFeature;
 import org.elasticsearch.metadatasearch.plugin.utils.Utils;
 import net.semanticmetadata.lire.utils.SerializationUtils;
@@ -24,7 +24,7 @@ import java.io.IOException;
 
 public class ImageQueryParser implements QueryParser {
 
-    public static final String NAME = "image";
+    public static final String NAME = "image-feature";
     public static final int FEATURE_MATCH_TRESHOLD = 33;
 
     private Client client;
@@ -46,7 +46,7 @@ public class ImageQueryParser implements QueryParser {
 
         XContentParser.Token token = parser.nextToken();
         if (token != XContentParser.Token.FIELD_NAME) {
-            throw new QueryParsingException(parseContext.index(), 0, 0, "[image] query malformed, no field", null);
+            throw new QueryParsingException(parseContext.index(), 0, 0, "[image-feature] query malformed, no field", null);
         }
 
 
@@ -150,7 +150,7 @@ public class ImageQueryParser implements QueryParser {
             if (hashEnum.equals(HashEnum.LSH)) {
                 hash = LSH.lsh.hash(feature.getDoubleHistogram());
             }
-            String hashFieldName = luceneFieldName + "." + ImageMapper.HASH + "." + hashEnum.name();
+            String hashFieldName = luceneFieldName + "." + ImageFeaturesMapper.HASH + "." + hashEnum.name();
 
               // no max result limit, use ImageHashQuery
                 BooleanQuery query = new BooleanQuery(true);

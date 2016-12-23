@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.isi.esextension.metadatasearch</groupId>
     <artifactId>image-metadata-search</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>Image Metadata Search Plugin for ElasticSearch</description>
     
 
 
     <properties>
-        <elasticsearch.version>2.1.1</elasticsearch.version>
+        <elasticsearch.version>2.4.1</elasticsearch.version>
         <lucene.version>5.3.1</lucene.version>
         <es.logger.level>INFO</es.logger.level>
     </properties>

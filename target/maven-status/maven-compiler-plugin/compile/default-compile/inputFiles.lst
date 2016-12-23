@@ -1,0 +1,15 @@
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/query/image/ImageQueryBuilder.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/lire/feature/ImageSURF.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/plugin/image/ImagePlugin.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/query/image/ImageHashQuery.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/similarity/CosineSimilarity.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/lire/feature/ImageLireFeature.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/query/image/ImageQueryParser.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/query/image/AbstractImageScorer.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/lire/feature/ImageCEDD.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/mapper/image/ImageMapper.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/plugin/utils/Utils.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/query/image/ImageScoreCache.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/hashes/LSH.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/mapper/image/FeatureEnum.java
+/Users/smartkit/git/elasticsearch-image-features/src/main/java/org/elasticsearch/metadatasearch/index/mapper/image/HashEnum.java

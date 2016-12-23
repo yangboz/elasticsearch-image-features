@@ -18,18 +18,30 @@ sudo <ES_HOME>/bin/plugin install file://<PATH TO ZIP ARCHIVE>
 <br/>
 3. Restart ElasticSearch<br />
 
+## Example
+#### Create Settings
+
+```sh
+curl -XPUT 'localhost:9200/a_index' -d '{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1,
+    "index.version.created": 1070499
+  }
+}'
+```
 
 ## Creating an image type
 After installing the plugin, you can create a type in an index that conatins the mapping for the "image" type.
 ```
-curl -XPUT 'localhost:9200/<index_name>/<type_name>/_mapping' -d '{
-    "<type_name>": {
+curl -XPUT 'localhost:9200/a_index/a_image_item/_mapping' -d '{
+    "a_image_item": {
         "properties": {
             "name": {
                 "type": "string"
             },
             "image": {
-                "type": "image",
+                "type": "image-features",
                 "feature": {
                     "CEDD": {
                         "hash": "LSH"
@@ -42,11 +54,12 @@ curl -XPUT 'localhost:9200/<index_name>/<type_name>/_mapping' -d '{
 ```
 
 ## Indexing an image
-```
+```sh
+curl -XPOST 'localhost:9200/a_index/a_image_item' -d '
 {
-	"name":"002_0002.jpg",
-	"image":"...feature vector as a base 64 encoded string..."
-}
+    "name":"002_0002.jpg",
+    "image":"...feature vector as a base 64 encoded string..."
+}'
 ```
 
 ```
@@ -218,22 +231,22 @@ public class Utils {
 
 ```
 ## Querying an image
-```
-{
-	"sort": [{
-		"_score": "desc"
-	}],
-	"fields": ["name"],
-	"query": {
-		"image": {
-			"image": {
-				"image": "...feature vector as a base 64 encoded string....",
-				"feature": "CEDD",
-				"hash": "LSH"
-			}
-		}
-	}
-}
+```sh
+curl -XPOST 'localhost:9200/a_index/a_image_item/_search' -d '{
+    "sort": [{
+    "_score": "desc"
+    }],
+    "fields": ["name"],
+    "query": {
+        "image-feature": {
+            "image-feature": {
+                "image": "...feature vector as a base 64 encoded string....",
+                "feature": "CEDD",
+                "hash": "LSH"
+            }
+        }
+    }
+}'
 ```
 
 

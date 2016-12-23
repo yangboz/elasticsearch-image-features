@@ -1,7 +1,12 @@
 package org.elasticsearch.metadatasearch.index.mapper.image;
+import org.elasticsearch.metadatasearch.lire.feature.ImageCEDD;
 import org.elasticsearch.metadatasearch.lire.feature.ImageLireFeature;
+import org.elasticsearch.metadatasearch.lire.feature.ImageSURF;
+
 public enum FeatureEnum {
-	CEDD(org.elasticsearch.metadatasearch.lire.feature.ImageCEDD.class);
+    CEDD(ImageCEDD.class),
+    SURF(ImageSURF.class);
+
     private Class<? extends ImageLireFeature> featureClass;
 
     FeatureEnum(Class<? extends ImageLireFeature> featureClass) {
